@@ -1,0 +1,9 @@
+<% layout("/layouts/boilerplate") %>
+<h3 class="mt-3 mb-3">Explore Destination on Map</h3>
+<div id="index-map"></div>
+
+<script>
+    const listings = <%- JSON.stringify(allListings) %>;
+</script>
+
+<script src="/js/indexMap.js"></script>

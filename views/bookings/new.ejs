@@ -1,0 +1,76 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-4 mb-4">
+  <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12">
+
+    <div class="booking-page-card shadow-sm">
+
+      <h2 class="mb-3">Reserve your stay</h2>
+
+      <div class="card mb-4 border-0">
+        <img
+          src="<%= listing.image.url %>"
+          class="card-img-top booking-img"
+          alt="listing_image"
+        >
+
+        <div class="card-body px-0">
+          <h4><%= listing.title %></h4>
+          <p class="text-muted mb-1">
+            <%= listing.location %>, <%= listing.country %>
+          </p>
+          <p>
+            <b>&#8377; <%= listing.price.toLocaleString("en-IN") %></b> / night
+          </p>
+        </div>
+      </div>
+
+      <form method="POST" action="/listings/<%= listing._id %>/bookings" class="needs-validation" novalidate>
+
+        <div class="mb-3">
+          <label for="checkIn" class="form-label">Check In</label>
+          <input
+            type="date"
+            id="checkIn"
+            name="booking[checkIn]"
+            class="form-control"
+            required
+          >
+          <div class="invalid-feedback">Please select check-in date.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="checkOut" class="form-label">Check Out</label>
+          <input
+            type="date"
+            id="checkOut"
+            name="booking[checkOut]"
+            class="form-control"
+            required
+          >
+          <div class="invalid-feedback">Please select check-out date.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="guests" class="form-label">Guests</label>
+          <input
+            type="number"
+            id="guests"
+            name="booking[guests]"
+            min="1"
+            class="form-control"
+            required
+          >
+          <div class="invalid-feedback">Please enter number of guests.</div>
+        </div>
+
+        <button class="btn reserve-btn w-100">
+          Confirm Reservation
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+</div>
