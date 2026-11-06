@@ -1,6 +1,6 @@
 # Travelio
 
-Wanderlust is a full-stack web application inspired by Airbnb, where users can create, view, edit, and delete travel listings. Users can also sign up, log in, add reviews, and manage only the listings and reviews created by them.
+Travelio is a full-stack web application inspired by Airbnb, where users can create, view, edit, and delete travel listings. Users can also sign up, log in, add reviews, and manage only the listings and reviews created by them.
 
 ## Features
 
